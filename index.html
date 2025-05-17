@@ -149,25 +149,30 @@
             let isValid = true;
 
             // Clear previous errors
-            nameError.textContent = '';
-            emailError.textContent = '';
+            nameError.textContent = "";
+            emailError.textContent = "";
+            outputDiv.innerHTML = "";
 
             // Name Validation
             if (name === "") {
                 nameError.textContent = "*Please enter your name.";
                 isValid = false;
+                outputDiv.innerHTML = `<p style="text-align: center;">Output will be displayed here.</p>`;
             } else if (!validateName(name)) {
                 nameError.textContent = '*Enter a valid name (min 3 letters, only letters/spaces).';
                 isValid = false;
+                outputDiv.innerHTML = `<p style="text-align: center;">Output will be displayed here.</p>`;
             }
 
             // Email Validation
             if (email === "") {
                 emailError.textContent = "*Please enter your email.";
                 isValid = false;
+                outputDiv.innerHTML = `<p style="text-align: center;">Output will be displayed here.</p>`;
             } else if (!validateEmail(email)) {
                 emailError.textContent = '*Please enter a valid email address.';
                 isValid = false;
+                outputDiv.innerHTML = `<p style="text-align: center;">Output will be displayed here.</p>`;
             }
 
             // If all is valid display output
